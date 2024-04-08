@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemple d'Accessibilité</title>
+</head>
+<body>
+    <h1>Liste de Tâches Interactive</h1>
+
+    <div role="search">
+        <label for="searchInput">Rechercher une tâche :</label>
+        <input type="text" id="searchInput" aria-label="Rechercher une tâche">
+        <!-- Ajout de l'attribut aria-label pour fournir une étiquette accessible -->
+    </div>
+
+    <div role="form">
+        <label for="taskInput">Ajouter une nouvelle tâche :</label>
+        <input type="text" id="taskInput" aria-label="Nouvelle tâche" placeholder="Ajouter une nouvelle tâche...">
+        <input type="datetime-local" id="dueDateInput" aria-label="Date d'échéance" placeholder="Date d'échéance...">
+        <select id="priorityInput" aria-label="Priorité">
+            <option value="Haute">Haute</option>
+            <option value="Moyenne">Moyenne</option>
+            <option value="Basse">Basse</option>
+        </select>
+        <button id="addTaskBtn">Ajouter</button>
+        <!-- Ajout de l'attribut aria-label pour fournir une étiquette accessible -->
+    </div>
+
+    <div role="region" aria-labelledby="completedTasksCount">
+        <!-- Utilisation de l'attribut aria-labelledby pour lier à l'élément qui identifie le contenu -->
+        <p id="completedTasksCount">Nombre de tâches terminées : <span id="completedTasksCountValue">0</span></p>
+    </div>
+
+    <ul role="list" id="taskList">
+        <!-- Utilisation de role="list" pour indiquer que c'est une liste -->
+        <!-- Chaque élément de liste aura un rôle d'élément de liste par défaut -->
+    </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- pour le champ tache seulement -->
+ <!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Tâches Interactive</title>
+    <link rel="stylesheet" href="asset/css/index.css">
+     Ajout du lien vers jQuery 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     Mon script jQuery 
+    <script src="asset/js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Liste de Tâches Interactive</h1>
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Ajouter une nouvelle tâche..." >
+            pour rendre le champ input non editable 
+            <input type="text" value="Contenu non éditable" readonly>
+            <br>
+            <button id="addTaskBtn">Ajouter</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>  -->
