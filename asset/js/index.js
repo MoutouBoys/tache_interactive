@@ -129,6 +129,7 @@ $(document).ready(function() {
 
     let incrVar = 1;
 
+    // La fonction ajouter
     function addTaskToList(taskText, dueDate, priority, completed) {
         const $taskItem = $("<li>").addClass("task").html(`
             <span>${incrVar}</span>
@@ -153,13 +154,14 @@ $(document).ready(function() {
     }
     
     
-
+    // la fonction sauvegarder
     function saveTask(taskText, dueDate, priority, completed) {
         const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
         tasks.push({ text: taskText, dueDate: dueDate, priority: priority, completed: completed });
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
+    // La fonction chargement
     function loadTasks() {
         const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
         tasks.forEach(function(task) {
@@ -168,6 +170,7 @@ $(document).ready(function() {
         updateCompletedTasksCount(); // Mise à jour du nombre de tâches complétées lors du chargement de la page
     }
 
+    // La fonction modifier
     function updateCompletedTasksCount() {
         const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
         const completedTasks = tasks.filter(task => task.completed).length;
@@ -177,6 +180,7 @@ $(document).ready(function() {
 
     loadTasks();
 
+    // déclachement d'évenement avec le btn ajout
     $addTaskBtn.on("click", function() {
         const taskText = $taskInput.val().trim();
         const dueDate = $dueDateInput.val().trim(); // Utilisation correcte de $dueDateInput
