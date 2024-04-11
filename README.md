@@ -1,11 +1,12 @@
 # tache_interactive
-Une application web basée sur la gestion des tâches:
-une barre de recherche: pour les tâches;
-un champ ajout tâche: pour ajouter des tâches;
-un champ date d'échéance : pour la date d'échéance ;
-un champ de prioriter: pour la gestion des prioritées;
-un bouton ajouter: pour ajouter des tâche;
-La fonctionnalité du nombre de tâches complètes: pour connaître le nombre de tâches complètes;
-une boîte checkBox pour chaque ligne: pour gérer l'etat de la tâche(complète ou non complète); 
-Un bouton modifier et supprimer pour chaque ligne: pour pouvoir modifier ou supprimer la ligne voulu;
-NB: Et concernant le bouton modifier(les modifications ce fond grâce à l'option de js alerte); 
+Une application web dédiée à la gestion des tâches offre plusieurs fonctionnalités :
+
+Une barre de recherche permettant de trouver rapidement des tâches spécifiques.
+Un champ d'ajout de tâche pour insérer de nouvelles tâches dans la liste.
+Un champ pour spécifier la date d'échéance de chaque tâche.
+Un champ pour définir la priorité de chaque tâche.
+Un bouton "Ajouter" pour intégrer les tâches dans la liste.
+Une fonctionnalité affichant le nombre de tâches complétées.
+Des cases à cocher pour chaque tâche, permettant de marquer les tâches comme complètes ou incomplètes.
+Des boutons "Modifier" et "Supprimer" pour chaque tâche, offrant la possibilité de modifier ou de supprimer une tâche.
+Concernant le bouton "Modifier", les modifications sont effectuées via des alertes JavaScript, permettant à l'utilisateur de modifier les détails de la tâche.); 
