@@ -195,6 +195,7 @@ $(document).ready(function() {
         }
     });
 
+    // évenement du btn delete
     $taskList.on("click", ".deleteBtn", function() {
         const $taskItem = $(this).parent();
         $taskItem.slideUp(function() {
@@ -210,7 +211,7 @@ $(document).ready(function() {
         }
     });
     
-
+    // évenement concerne l'état de la case à cocher
     $taskList.on("change", ".task-completed", function() {
         const taskText = $(this).prevAll(".task-text").text();
         const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
