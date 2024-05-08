@@ -273,4 +273,40 @@ $(".task").on("transitionend", function() {
         $(this).hide();
     }
 });
+// Fonction pour créer une bulle
+function createBubble() {
+    const bubble = $("<div>").addClass("bubble");
+    const size = Math.random() * 60; // Taille aléatoire de la bulle
+    const startLeft = Math.random() * $(window).width(); // Position horizontale aléatoire
+    const animationDuration = Math.random() * 2000 + 1000; // Durée de l'animation entre 1 et 3 secondes
+
+    bubble.css({
+        width: size + "px",
+        height: size + "px",
+        left: startLeft + "px",
+        bottom: -size + "px", // Position de départ en bas de la page
+        opacity: 0 // Opacité initiale à 0 pour une apparition progressive
+    });
+
+    const middleOfWindow = $(window).height() / 2; // Position verticale du milieu de la page
+
+    // Animation de déplacement de la bulle de bas en haut
+    bubble.animate({
+        bottom: middleOfWindow, // Position au milieu de la page
+        opacity: 1 // Apparition progressive
+    }, animationDuration, function() {
+        $(this).animate({
+            bottom: 0, // Position en haut de la page
+            opacity: 0 // Disparition progressive
+        }, animationDuration, function() {
+            $(this).remove(); // Suppression de la bulle une fois l'animation terminée
+        });
+    });
+
+    $("#bubble-container").append(bubble); // Ajout de la bulle au conteneur
+}
+
+// Création de bulles à intervalles réguliers
+setInterval(createBubble, 50);
+
 });

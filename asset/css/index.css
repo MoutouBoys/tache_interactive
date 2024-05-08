@@ -5,7 +5,9 @@ body {
     padding: 0;
     background-color: #f8f9fa;
 }
-
+body::-webkit-scrollbar{
+    display: none;
+}
 :root{
     --color-red: red;
     --color-blue: #007bff;
@@ -63,6 +65,10 @@ ul {
     list-style-type: none;
     padding: 0;
 }
+#taskList {
+    max-height: 200px; /* Hauteur maximale de la liste */
+    overflow-y: auto; /* Activation du défilement vertical si nécessaire */
+}
 /* La mise en forme de la balise d'incrémentation */
 
 /* Cette partie est le css des balise li */
@@ -110,6 +116,20 @@ ul {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-top: 10px;
+}
+
+/* animation boule */
+#bubble-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bubble {
+    position: absolute;
+    background-color: rgba(231, 10, 10, 0.5); /* Couleur semi-transparente */
+    border-radius: 50%; /* Forme ronde */
+    z-index: -1; /* Placer derrière les autres éléments */
 }
 /* Cette partie sera pour la responsivité */
 /* @media screen and (max-width: ) {
